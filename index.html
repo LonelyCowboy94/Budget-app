@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://faicon.com.br/Loja/Imagens/logopng_20220621104126.png">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="app">
+        <div id="header">
+<!-- Header option 1 -->
+            <div id="title">  
+                CashFlow
+            </div>   
+<!-- --------------- -->
+<!-- Header option 2 -->
+            <div id="search"> 
+                <span id="searchInput">
+                    <input type="text" id="searchInputField">
+                </span>       
+                <span id="searchBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </span>
+            </div>  
+<!-- --------------- -->                     
+        </div>
+        <div id="content">
+<!-- Welcome Screen -->
+            <div id="welcomeScreen">
+                <div id="logo">
+
+                </div>
+                <button type="button" id="myFinancesBtn">My Finances</button>
+                <button type="button" id="getStartedBtn">Get Started</button>
+            </div>
+<!-- -------------- --> 
+<!--  My Finances 3 -->   
+            <div id="myFinances">
+                <div id="financesButtons">
+                    <button id="incomeBtn">Add Income</button>
+                    <button id="expenseBtn">Add Expense</button>
+                    <button id="overviewBtn">Overview</button>
+                </div>
+<!-- -------------- -->
+<!--   Add Income   -->
+                <div id="addIncome">
+                    <input type="text" id="addIncomeInputField" placeholder="Income amount...">
+                    <button type="button" class="addBtn" id="addIncomeBtn">Insert</button>
+                </div>
+<!-- -------------- --> 
+<!--  Add Expense   -->                
+                <div id="addExpense">
+                    <input type="text" id="addExpenseInputField" placeholder="Expense name...">
+                    <input type="text" id="addExpenseAmountInputField" placeholder="Amount...">
+                    <button type="button" class="addBtn" id="addExpenseBtn">Insert</button>
+                </div>
+<!-- -------------- -->   
+<!-- Expense preview-->
+                <div id="expensePreview">   
+                    <p>
+                        <span>Income:</span><span id="income"></span>
+                    </p>
+                </div>
+<!-- -------------- -->
+ <!-- My Finances C -->                 
+                <div id="myFinancesContent">
+
+                </div>
+            </div>
+<!-- -------------- -->
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
