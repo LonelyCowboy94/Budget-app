@@ -85,7 +85,7 @@ body {
 #welcomeScreen {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    align-items: center;
     gap: 10px;
     width: 100%;
     height: calc(100vh - 70px);
@@ -321,4 +321,28 @@ body {
     color: red;
     font-weight: bold;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    #app {
+        width: 100%;
+        height: auto;
+    }
+
+    #header {
+        padding: 10px 15px;
+        height: 60px;
+    }
+
+    #title {
+        font-size: 30px;
+    }
+
+    #welcomeScreenBtns {
+        top: 30%;
+    }
+
+    #myFinancesBtn, #getStartedBtn {
+        font-size: 22px;
+    }
 }
