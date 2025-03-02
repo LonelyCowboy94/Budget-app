@@ -39,6 +39,7 @@ const home = () => {
     addExpense.style.display = "none";
     addIncome.style.display = "none";
     welcomeScreen.style.display = "flex";
+    expensePreview.style.display = "none";
 }
 
 const MyFinances = () => {
@@ -110,39 +111,7 @@ const updateExpenseDisplay = (expenseName) => {
         expensePreview.insertBefore(newExpense, expensePreview.lastChild);
     }
 
-    // Računanje ukupnog salda
-    let totalIncome = financialData.income || 0;
-    let totalExpenses = Object.values(financialData.expenses).reduce((acc, val) => acc + val, 0);
-    let totalBalance = totalIncome - totalExpenses;
-
-    // Provera da li već postoji total element
-    let existingTotal = document.getElementById("totalBalance");
-    
-    if (existingTotal) {
-        existingTotal.innerHTML = `<h3>Total:</h3><span>${formatNumber(totalBalance)}</span>`;
-    } else {
-        let totalElement = document.createElement("p");
-        totalElement.id = "totalBalance";
-        totalElement.innerHTML = `<h3>Total:</h3><span>${formatNumber(totalBalance)}</span>`;
-
-        expensePreview.appendChild(totalElement);
-    }
-
-    // Provera da li je totalBalance pozitivan ili negativan
-    let totalBalanceSpan = document.querySelector("#totalBalance span");
-
-    // Dodavanje odgovarajuće klase na osnovu vrednosti totalBalance
-    if (totalBalance > 0) {
-        totalBalanceSpan.classList.add("positive");
-        totalBalanceSpan.classList.remove("negative");
-    } else if (totalBalance < 0) {
-        totalBalanceSpan.classList.add("negative");
-        totalBalanceSpan.classList.remove("positive");
-    } else {
-        // Ako je saldo 0, možemo dodati neku neutralnu klasu, ili samo ostaviti bez klase
-        totalBalanceSpan.classList.remove("positive", "negative");
-    }
-
+    calculateSaldo()
     console.log(financialData);
 };
 
@@ -150,9 +119,17 @@ const updateExpenseDisplay = (expenseName) => {
 
 const addEBtn = () => {
     expensePreview.style.display = "block";
-
+    
     let expenseValue = Number(addExpenseAmountInputField.value);
     let expenseName = addExpenseInputField.value.trim().charAt(0).toUpperCase() + addExpenseInputField.value.trim().slice(1).toLowerCase();
+
+    // Provera da li je vrednost broj
+    if (isNaN(expenseValue) || expenseValue <= 0) {
+        alert("Please enter a valid number for the expense.");
+        addExpenseInputField.value = "";
+        addExpenseAmountInputField.value = "";
+        return; // Prekida dalji tok funkcije
+    }
 
     // Proveravamo da li već postoji ključ za taj trošak u objektu
     if (financialData.expenses[expenseName]) {
@@ -169,15 +146,23 @@ const addEBtn = () => {
     console.log(financialData);
     addExpenseInputField.value = "";
     addExpenseAmountInputField.value = "";
+   
 };
+
 
 
 
 const addIBtn = () => {
     expensePreview.style.display = "block";
-
-    // Preuzimamo unos korisnika i pretvaramo ga u broj
+ 
     let incomeValue = Number(addIncomeInputField.value);
+
+    // Provera da li je vrednost broj
+    if (isNaN(incomeValue) || incomeValue <= 0) {
+        alert("Please enter a valid number for the income.");
+        addIncomeInputField.value = "";
+        return; // Prekida dalji tok funkcije
+    }
 
     // Nadodajemo vrednost na postojeći prihod
     financialData.income += incomeValue;
@@ -185,8 +170,45 @@ const addIBtn = () => {
     // Ažuriramo tekst na ekranu sa novim prihodom
     income.textContent = formatNumber(financialData.income);
     addIncomeInputField.value = "";
-    updateExpenseDisplay()
+   
+    calculateSaldo();
     console.log(financialData);
+}
+
+
+function calculateSaldo() {
+     // Računanje ukupnog salda
+     let totalIncome = financialData.income || 0;
+     let totalExpenses = Object.values(financialData.expenses).reduce((acc, val) => acc + val, 0);
+     let totalBalance = totalIncome - totalExpenses;
+ 
+     // Provera da li već postoji total element
+     let existingTotal = document.getElementById("totalBalance");
+     
+     if (existingTotal) {
+         existingTotal.innerHTML = `<h3>Total:</h3><span>${formatNumber(totalBalance)}</span>`;
+     } else {
+         let totalElement = document.createElement("p");
+         totalElement.id = "totalBalance";
+         totalElement.innerHTML = `<h3>Total:</h3><span>${formatNumber(totalBalance)}</span>`;
+ 
+         expensePreview.appendChild(totalElement);
+     }
+ 
+     // Provera da li je totalBalance pozitivan ili negativan
+     let totalBalanceSpan = document.querySelector("#totalBalance span");
+ 
+     // Dodavanje odgovarajuće klase na osnovu vrednosti totalBalance
+     if (totalBalance > 0) {
+         totalBalanceSpan.classList.add("positive");
+         totalBalanceSpan.classList.remove("negative");
+     } else if (totalBalance < 0) {
+         totalBalanceSpan.classList.add("negative");
+         totalBalanceSpan.classList.remove("positive");
+     } else {
+         // Ako je saldo 0, možemo dodati neku neutralnu klasu, ili samo ostaviti bez klase
+         totalBalanceSpan.classList.remove("positive", "negative");
+     }
 }
 
 
