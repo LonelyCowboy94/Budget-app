@@ -108,9 +108,10 @@ body {
 }
 
 #welcomeScreenBtns {
-    margin-top: auto;
     display: flex;
     flex-direction: column;
+    position: relative;
+    top: calc(100vh - 380px);
     gap: 20px;
     align-items: center;
 }
@@ -252,13 +253,11 @@ body {
     border: 1px solid;
     box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.37);
     width: 350px;
-    max-height: 330px;
-    overflow: scroll;
+    max-height: calc(100vh - 360px);
+    overflow: auto;
     margin: 20px auto;
     padding: 20px;
 }
-
-
 
 #expensePreview p {
     display: flex;
