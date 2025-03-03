@@ -240,7 +240,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    height: calc(100vh - 140px);
+    height: calc(100vh - 70px);
 }
 
 #myFinancesContent {
@@ -442,8 +442,12 @@ body {
 }
 
 .delete-expense {
-    width: 20px;
+    text-align: center;
+    width: 25px;
+    height: 25px;
     margin-right: 10px;
+    background-color: rgb(197, 197, 197);
+    border-radius: 5px;
 }
 
 .deleteBudget:hover {
@@ -510,7 +514,7 @@ body {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 375px) {
     body {
         height: 630px;
     }
@@ -531,6 +535,72 @@ body {
 
     #welcomeScreen{
         height: 570px;
+    }
+
+    #welcomeScreenBtns {
+        top: 30%;
+    }
+
+    #myFinancesBtn, #getStartedBtn {
+        font-size: 22px;
+    }
+}
+
+/* iPhone 12 i iPhone 13 Pro */
+@media (max-width: 390px) {
+    body {
+        height: 750px; /* prilagođeno za manju visinu ekrana */
+    }
+
+    #app {
+        width: 100%;
+        height: auto;
+    }
+
+    #header {
+        padding: 10px 15px;
+        height: 60px;
+    }
+
+    #title {
+        font-size: 30px;
+    }
+
+    #welcomeScreen {
+        height: 670px; /* prilagođeno za manju visinu */
+    }
+
+    #welcomeScreenBtns {
+        top: 30%;
+    }
+
+    #myFinancesBtn, #getStartedBtn {
+        font-size: 22px;
+    }
+}
+
+/* iPhone 13 Pro Max */
+@media (max-width: 430px) {
+    body {
+        height: 900px; /* prilagođeno za veći ekran */
+    }
+
+    #app {
+        width: 100%;
+        height: auto;
+    }
+
+    #header {
+        padding: 10px 15px;
+        height: 60px;
+    }
+
+    #title {
+        font-size: 30px;
+    }
+
+    #welcomeScreen {
+        height: 750px; /* prilagođeno za veći ekran */
     }
 
     #welcomeScreenBtns {
