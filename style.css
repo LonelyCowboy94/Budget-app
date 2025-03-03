@@ -533,6 +533,10 @@ body {
         font-size: 30px;
     }
 
+    #myFinances{
+        height: 570px;
+    }
+
     #welcomeScreen{
         height: 570px;
     }
@@ -546,10 +550,10 @@ body {
     }
 }
 
-/* iPhone 12 i iPhone 13 Pro */
+
 @media (max-width: 390px) {
     body {
-        height: 750px; /* prilagođeno za manju visinu ekrana */
+        height: 720px; /* prilagodba za veći ekran */
     }
 
     #app {
@@ -566,8 +570,12 @@ body {
         font-size: 30px;
     }
 
+    #myFinances {
+        height: 640px; /* prilagodba za veći ekran */
+    }
+
     #welcomeScreen {
-        height: 670px; /* prilagođeno za manju visinu */
+        height: 640px; /* prilagodba za veći ekran */
     }
 
     #welcomeScreenBtns {
@@ -579,10 +587,9 @@ body {
     }
 }
 
-/* iPhone 13 Pro Max */
 @media (max-width: 430px) {
     body {
-        height: 900px; /* prilagođeno za veći ekran */
+        height: 920px; /* prilagodba za još veći ekran */
     }
 
     #app {
@@ -599,8 +606,12 @@ body {
         font-size: 30px;
     }
 
+    #myFinances {
+        height: 750px; /* prilagodba za još veći ekran */
+    }
+
     #welcomeScreen {
-        height: 750px; /* prilagođeno za veći ekran */
+        height: 750px; /* prilagodba za još veći ekran */
     }
 
     #welcomeScreenBtns {
