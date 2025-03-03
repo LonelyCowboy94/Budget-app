@@ -514,7 +514,7 @@ body {
 }
 
 
-@media (max-width: 375px) {
+@media (max-width: 768px) {
     body {
         height: 630px;
     }
@@ -529,89 +529,16 @@ body {
         height: 60px;
     }
 
-    #title {
-        font-size: 30px;
+    #myFinances {
+        height: 570px;
     }
 
-    #myFinances{
-        height: 570px;
+    #title {
+        font-size: 30px;
     }
 
     #welcomeScreen{
         height: 570px;
-    }
-
-    #welcomeScreenBtns {
-        top: 30%;
-    }
-
-    #myFinancesBtn, #getStartedBtn {
-        font-size: 22px;
-    }
-}
-
-
-@media (max-width: 390px) {
-    body {
-        height: 720px; /* prilagodba za veći ekran */
-    }
-
-    #app {
-        width: 100%;
-        height: auto;
-    }
-
-    #header {
-        padding: 10px 15px;
-        height: 60px;
-    }
-
-    #title {
-        font-size: 30px;
-    }
-
-    #myFinances {
-        height: 640px; /* prilagodba za veći ekran */
-    }
-
-    #welcomeScreen {
-        height: 640px; /* prilagodba za veći ekran */
-    }
-
-    #welcomeScreenBtns {
-        top: 30%;
-    }
-
-    #myFinancesBtn, #getStartedBtn {
-        font-size: 22px;
-    }
-}
-
-@media (max-width: 430px) {
-    body {
-        height: 920px; /* prilagodba za još veći ekran */
-    }
-
-    #app {
-        width: 100%;
-        height: auto;
-    }
-
-    #header {
-        padding: 10px 15px;
-        height: 60px;
-    }
-
-    #title {
-        font-size: 30px;
-    }
-
-    #myFinances {
-        height: 750px; /* prilagodba za još veći ekran */
-    }
-
-    #welcomeScreen {
-        height: 750px; /* prilagodba za još veći ekran */
     }
 
     #welcomeScreenBtns {
