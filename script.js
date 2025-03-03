@@ -1,11 +1,8 @@
-/*TODO: Bagovi se javljaju na addIBtn ubacuje sve kako treba
-a na addEBtn ne ubacuje income i total*/
+/*TODO: import languages*/
 
-/*TODO: uraditi cuvanje po mesecima (novi array sa objektima)*/
+/*TODO: import currencies*/
 
-/*TODO: uraditi jezike*/
-
-/*TODO: uraditi valute*/
+/*TODO: import search function*/
 
 // Fields DOM
 const header = document.getElementById("header");
