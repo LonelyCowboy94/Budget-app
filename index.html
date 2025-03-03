@@ -15,8 +15,24 @@
         <div id="header">
 <!-- Header option 1 -->
             <div id="title">  
-                CashFlow
+                <p>CashFlow</p>
             </div>   
+<!-- --------------- -->
+ <!-- Navigation Bar -->
+            <nav id="navBar">
+                <ul>
+                    <li id="homeBtn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></li>
+
+                    <li id="saveBtn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save"><path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"/><path d="M7 3v4a1 1 0 0 0 1 1h7"/></svg></li>
+                    
+                    <li class="dropdown"><p id="settingsBtn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bolt"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><circle cx="12" cy="12" r="4"/></svg></p>
+                    <div class="dropdown-content">
+                        <a href="#" id="resetAppBtn">Reset entry</a>
+                        <a href="#" id="currencyBtn">Currency</a>
+                        <a href="#" id="languageBtn">Language</a>
+                      </div></li>
+                </ul>
+            </nav>
 <!-- --------------- -->
 <!-- Header option 2 -->
             <div id="search"> 
@@ -46,35 +62,39 @@
 <!-- -------------- --> 
 <!--  My Finances 3 -->   
             <div id="myFinances">
-                <div id="financesButtons">
-                    <button id="incomeBtn">Add Income</button>
-                    <button id="expenseBtn">Add Expense</button>
-                    <button id="overviewBtn">Overview</button>
-                </div>
+                
 <!-- -------------- -->
 <!--   Add Income   -->
                 <div id="addIncome">
                     <input type="text" id="addIncomeInputField" placeholder="Income amount...">
-                    <button type="button" class="addBtn" id="addIncomeBtn">⇒</button>
+                    <button type="button" class="addBtn" id="addIncomeBtn">add income</button>
                 </div>
 <!-- -------------- --> 
 <!--  Add Expense   -->                
                 <div id="addExpense">
                     <input type="text" id="addExpenseInputField" placeholder="Expense name...">
                     <input type="text" id="addExpenseAmountInputField" placeholder="Amount...">
-                    <button type="button" class="addBtn" id="addExpenseBtn">⇐</button>
+                    <button type="button" class="addBtn" id="addExpenseBtn">add expense</button>
                 </div>
 <!-- -------------- -->   
 <!-- Expense preview-->
-                <div id="expensePreview">   
+                <div id="expensePreview">
+                     
                     <p>
                         <span>Income:</span><span id="income"></span>
                     </p>
                 </div>
+                
+                
 <!-- -------------- -->
  <!-- My Finances C -->                 
                 <div id="myFinancesContent">
 
+                </div>
+                <div id="financesButtons">
+                    <button id="incomeBtn">Income</button>
+                    <button id="expenseBtn">Expense</button>
+                    <button id="overviewBtn">Overview</button>
                 </div>
             </div>
 <!-- -------------- -->
